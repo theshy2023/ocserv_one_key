@@ -57,7 +57,6 @@ echo "Your Ipv4:"
 echo -e "\e[31m$public_ip\e[0m"
 install_ocserv
 create_cert $public_ip
-#edit_conf $public_ip
 edit_iptables
 systemctl restart ocserv
 systemctl status ocserv
