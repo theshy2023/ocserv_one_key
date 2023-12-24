@@ -63,7 +63,7 @@ echo -e "\e[31m$public_ip\e[0m"
 install_ocserv
 do_mkcert $public_ip
 create_ca $ssl_dir
-create_windows_ios_p12 $ssl_dir
+create_client_p12 $ssl_dir
 edit_conf
 edit_iptables
 systemctl restart ocserv
