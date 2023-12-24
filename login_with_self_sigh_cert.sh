@@ -51,9 +51,8 @@ create_ca(){
 	certtool --generate-certificate --load-privkey $1/client-privkey.pem --load-ca-certificate $1/ca-cert.pem --load-ca-privkey $1/ca-privkey.pem --template $1/client-cert.cfg --outfile $1/client-cert.pem	
 }
 
-create_windows_ios_p12(){
-	certtool --to-p12 --load-privkey $1/client-privkey.pem --load-certificate $1/client-cert.pem --pkcs-cipher aes-256 --outfile $1/windows.p12 --outder
-	certtool --to-p12 --load-privkey $1/client-privkey.pem --load-certificate $1/client-cert.pem --pkcs-cipher 3des-pkcs12 --outfile $1/ios.p12 --outder
+create_client_p12(){
+	certtool --to-p12 --load-privkey $1/client-privkey.pem --load-certificate $1/client-cert.pem --pkcs-cipher 3des-pkcs12 --outfile $1/client.p12 --outder
 }
 
 version_check
