@@ -53,6 +53,7 @@ create_ca(){
 
 create_client_p12(){
 	certtool --to-p12 --load-privkey $1/client-privkey.pem --load-certificate $1/client-cert.pem --pkcs-cipher 3des-pkcs12 --outfile $1/client.p12 --outder
+	 openssl pkcs12 -export -inkey $1/client-privkey.pem -in $1/client-cert.pem -certfile $1/client-cert.pem -out $1/legacy.p12 -legacy
 }
 
 version_check
